@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "IDとパスワードを入力するのだ"
+AuthUserFile D:\xampp\htdocs\mainte\.htpasswd
+require valid-user
