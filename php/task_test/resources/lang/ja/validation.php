@@ -147,6 +147,18 @@ return [
     |
     */
 
-    'attributes' => [],
+    // 'attributes' => [],
+    'attributes' => [
+        // '' => '',
+        'password' => 'パスワード',
+        'your_name' => '氏名',
+        'email' => 'メールアドレス',
+        'url' => 'ホームページ',
+        'title' => '件名',
+        'gender' => '性別',
+        'age' => '年齢',
+        'contact' => 'お問い合わせ内容',
+        'caution' => '注意事項',
+    ],
 
 ];
