@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAreasTable extends Migration
+class CreateRouteShopTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('areas', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name', 20);
-            $table->integer('sort_no');
-            $table->timestamps();
+        Schema::create('route_shop', function (Blueprint $table) {
+            $table->unsignedBigInteger('route_id');
+            $table->unsignedBigInteger('shop_id');
+
+            $table->primary(['route_id', 'shop_id']);
+
         });
     }
 
@@ -28,6 +29,6 @@ class CreateAreasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('areas');
+        Schema::dropIfExists('route_shop');
     }
 }

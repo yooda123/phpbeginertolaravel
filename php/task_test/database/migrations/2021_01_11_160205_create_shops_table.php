@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAreasTable extends Migration
+class CreateShopsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('areas', function (Blueprint $table) {
+        Schema::create('shops', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 20);
-            $table->integer('sort_no');
+            $table->string('shop_name', 20);
+            $table->unsignedBigInteger('area_id');
             $table->timestamps();
+
+            $table->foreign('area_id')->references('id')->on('areas');
         });
     }
 
@@ -28,6 +30,6 @@ class CreateAreasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('areas');
+        Schema::dropIfExists('shops');
     }
 }
